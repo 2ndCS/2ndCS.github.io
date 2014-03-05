@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<title>2ND Class Society.</title>
+	<meta name="description" content="Remodal example">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="css/jquery.remodal.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<section class="home">
+<img src="images/logo.png">
+<div class="remodal-bg">
+    <a href="#modal"><div id="about">about</div></a>
+    <br><br>
+
+    <div class="remodal" data-remodal-id="modal">
+        <h1>2ND Class Society.</h1>
+        <p>
+		
+        Just a bunch of teenagers who has a lot of spare time~
+		
+        </p>
+        </div>
+</div>
+</section>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/jquery-2.1.0.min.js"><\/script>')</script>
+
+<!-- Instead of JQuery, you can use zepto now! -->
+<!--<script src="js/zepto.min.js"></script>-->
+
+<script src="js/jquery.remodal.js"></script>
+
+<!-- Events -->
+<script>
+    $(document).on('open', '.remodal', function () {
+        console.log('open');
+    });
+
+    $(document).on('opened', '.remodal', function () {
+        console.log('opened');
+    });
+
+    $(document).on('close', '.remodal', function () {
+        console.log('close');
+    });
+
+    $(document).on('closed', '.remodal', function () {
+        console.log('closed');
+    });
+
+    $(document).on('confirm', '.remodal', function () {
+        console.log('confirm');
+    });
+
+    $(document).on('cancel', '.remodal', function () {
+        console.log('cancel');
+    });
+</script>
+</body>
+</html>
