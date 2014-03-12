@@ -1,50 +1,69 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>
-<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>
-<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>
-<html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="no-js"> <!--<![endif]-->
-<head>
-	<meta charset="utf-8">
-	<title>2ND Class Society.</title>
-	<meta name="description" content="Remodal example">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>2ND Class Society.</title>
+        <meta name="description" content="2ndCS experimental project 2014">
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
-	<link rel="stylesheet" href="css/jquery.remodal.css">
-	<link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-
-<section class="home">
-<img src="images/logo.png">
-<div class="remodal-bg">
-    <a href="#modal"><div id="about">about</div></a>
-    <br><br>
-
-    <div class="remodal" data-remodal-id="modal">
-        <h1>2ND Class Society.</h1>
-        <p>
-		
-        Just a bunch of teenagers who has a lot of spare time~
-		
-        </p>
-        </div>
-</div>
-</section>
-
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/pushy-style.css">
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/jquery.remodal.css">
+        <link rel="stylesheet" href="css/pushy.css">
+		<link rel="stylesheet" href="css/animate.css">
+        
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="js/jquery-2.1.0.min.js"><\/script>')</script>
+        <script src="js/modernizr.js"></script>
+		<script src="js/animatescroll.js"></script>
 
-<!-- Instead of JQuery, you can use zepto now! -->
-<!--<script src="js/zepto.min.js"></script>-->
+    </head>
+    <body>
+        <!-- Pushy Menu -->
+        <nav class="pushy pushy-left">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a onclick="$('.profile').animatescroll({scrollSpeed:1000,easing:'easeOutBack'});">Profile</a></li>
+                <li><a onclick="$('.team').animatescroll({scrollSpeed:2000,easing:'easeInQuad'});">Etc.</a></li>
+            </ul>
+        </nav>
+        <div class="site-overlay"></div>
 
-<script src="js/jquery.remodal.js"></script>
+	<section class="home">
 
-<!-- Events -->
-<script>
+        <div id="container">
+            <div class="menu-btn">&#9776;</div>
+			<div class="logo animated flip"><img src="images/logo.png" alt="2ndCS Logo /></div>
+			<div class="remodal-bg">
+				<a href="#modal"><div id="about">about</div></a>
+				<br><br>
+
+				<div class="remodal" data-remodal-id="modal">
+				<h1 animated flip>2ND Class Society.</h1>
+				<p>
+				Just a bunch of teenagers who has a lot of spare time~
+				</p>
+				</div>
+			</div>
+		</div>
+</section>
+	
+	<section class="profile animated fadeInUp" id="profile">
+	<img src="images/info.png" alt="info" />
+	<h1> This page is under construction </h1>
+	</section>
+	
+	<section class="team">
+	<img src="images/info.png" alt="info" />
+	<h1> This page is under construction too </h1>
+	</section>
+	
+    <script src="js/pushy.min.js"></script>
+	<script src="js/jquery.remodal.js"></script>
+
+	<script> <!-- Remodal -->
     $(document).on('open', '.remodal', function () {
         console.log('open');
     });
@@ -68,6 +87,7 @@
     $(document).on('cancel', '.remodal', function () {
         console.log('cancel');
     });
-</script>
-</body>
+	</script>
+
+    </body>
 </html>

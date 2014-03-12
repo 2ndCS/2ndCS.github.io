@@ -1,0 +1,38 @@
+html, body{
+	overflow-x: hidden /* prevents horizontal scroll bars */
+	-webkit-tap-highlight-color: rgba(0,0,0,0); /* disable webkit tap highlight */
+	height: 100%; /* fixes focus scrolling in Safari (OS X) */
+}
+
+/* Lists */
+
+ul{
+    margin: 0;
+    padding: 0;
+}
+
+/* Container */
+
+#container{
+	position: relative;
+    margin-top:-11%;
+    margin-left:-11%;
+}
+
+/* Menu Button */
+
+.menu-btn{
+    font-size:4Vmin;
+	width: 35px;
+	padding: 10px;
+	margin-bottom: 35px;
+    background: #333333;
+	color: #cccccc;
+	text-align: center;
+	cursor: pointer;
+}
+
+.menu-btn:hover{
+	background: #cccccc;
+	color: #FFF;
+}
