@@ -1,93 +1,89 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html class="no-js">
-    <head>
-        <meta charset="utf-8">
-        <title>2ND Class Society.</title>
-        <meta name="description" content="2ndCS experimental project 2014">
+	<head>
+	<meta charset="utf-8">
+        <title>//Stack.</title>
+        <meta name="description" content="This is an experimental stack program using javascript made for educational purpose :D">
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
-        <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/pushy-style.css">
-		<link rel="stylesheet" href="css/style.css">
-		<link rel="stylesheet" href="css/jquery.remodal.css">
+        <!-- css list -->
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/flat-ui.css">
+        <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/pushy.css">
-		<link rel="stylesheet" href="css/animate.css">
-        
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="js/jquery-2.1.0.min.js"><\/script>')</script>
-        <script src="js/modernizr.js"></script>
-		<script src="js/animatescroll.js"></script>
 
+         <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/jquery-2.1.1.min.js"><\/script>')</script>
+        <!-- Modernizr -->
+        <script src="js/modernizr.min.js"></script>
     </head>
+
     <body>
         <!-- Pushy Menu -->
         <nav class="pushy pushy-left">
             <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a onclick="$('.profile').animatescroll({scrollSpeed:1000,easing:'easeOutBack'});">Profile</a></li>
-                <li><a onclick="$('.etc').animatescroll({scrollSpeed:2000,easing:'easeInQuad'});">Etc.</a></li>
+                <li><a href="https://twitter.com/Arqariiq" target="_blank">Ariiq Dio F</a></li>
+                <li><a href="#">Deanti Pratami</a></li>
+                <li><a href="#">Feny An Zaeni</a></li>
+                <li><a href="#">Yesi Sulasih</a></li>
+                <li><a href="https://twitter.com/Yonathph" targer="_blank">Yonathan APH</a></li>
             </ul>
         </nav>
+
+        <!-- Site Overlay -->
         <div class="site-overlay"></div>
 
-	<section class="home">
+        <header>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-2 col-xs-4">
+                        <div class="menu-btn">&equiv; about</div>
+                    </div>
+                </div>
+            </div>   
+        </header>                 
+    	<section class="primary section-padding" id="primary">
+    		<div class="container-fluid">
+    			<div class="row">
+    				<div class="col-md-10 col-md-offset-1 text-center">
+    					<h1><img src="images/stack_logo.png" alt="stack logo"> STACK</h1>
+    				</div>
+    			</div>
+    			
+    			<div class="row">
+    				<div class="col-md-8 col-md-offset-2 text-center gap">
+    					<form role="form" name="formStack" method="post" action="">
+ 							<div class="form-group">
+    						<div class="input-group">
+                              <input class="form-control" type="text" value="" name="infixVal" placeholder="Input your Infix expression here"></input>
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" type="button" onclick="document.formPostfix.postfixVal.value=InfixToPostfix(document.formStack.infixVal.value,'arr',0);">Convert</button>
+                                </span>
+                            </div>
+                            </div>
+						</form>
+    				</div>	
+    			</div>
 
-        <div id="container">
-            <div class="menu-btn">&#9776;</div>
-			<div class="logo animated flip"><img src="images/logo.png" alt="2ndCS Logo /></div>
-			<div class="remodal-bg">
-				<a href="#modal"><div id="about">about</div></a>
-				<br><br>
-
-				<div class="remodal" data-remodal-id="modal">
-				<h1 animated flip>2ND Class Society.</h1>
-				<p>
-				Just a bunch of teenagers who has a lot of spare time~
-				</p>
-				</div>
-			</div>
-		</div>
-</section>
-	
-	<section class="profile animated fadeInUp" id="profile">
-	<img src="images/info.png" alt="info" />
-	<h1> This page is under construction </h1>
-	</section>
-	
-	<section class="etc">
-	<img src="images/info.png" alt="info" />
-	<h1> This page is under construction too </h1>
-	</section>
-	
-    <script src="js/pushy.min.js"></script>
-	<script src="js/jquery.remodal.js"></script>
-
-	<script> <!-- Remodal -->
-    $(document).on('open', '.remodal', function () {
-        console.log('open');
-    });
-
-    $(document).on('opened', '.remodal', function () {
-        console.log('opened');
-    });
-
-    $(document).on('close', '.remodal', function () {
-        console.log('close');
-    });
-
-    $(document).on('closed', '.remodal', function () {
-        console.log('closed');
-    });
-
-    $(document).on('confirm', '.remodal', function () {
-        console.log('confirm');
-    });
-
-    $(document).on('cancel', '.remodal', function () {
-        console.log('cancel');
-    });
-	</script>
-
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <form role="form" name="formPostfix" method="post" action="">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon">Postfix</span>
+                                <input class="form-control" type="text" value="" name="postfixVal"></input>
+                            </div>
+                        </div>
+                        </form>
+    		        </div>		
+                </div>
+                
+            </div>        
+    	</section>	
     </body>
-<!-- 2nd Class Society | 2014 | 03-->
+
+    <!-- JS list -->
+    <script src="js/bootstrap.js"></script>
+    <script src="js/InfixToPostfix.js"></script>
+    <script src="js/pushy.min.js"></script>
 </html>
