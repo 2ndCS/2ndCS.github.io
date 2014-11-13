@@ -10,7 +10,6 @@
         <link rel="stylesheet" href="css/bootstrap.css">
         <link rel="stylesheet" href="css/flat-ui.css">
         <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="css/pushy.css">
 
          <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/jquery-2.1.1.min.js"><\/script>')</script>
@@ -51,32 +50,32 @@
     			</div>
     			
     			<div class="row">
-    				<div class="col-md-8 col-md-offset-2 text-center gap">
+    				<div class="col-md-8 col-md-offset-2 text-center gap-1">
     					<form role="form" name="formStack" method="post" action="">
  							<div class="form-group">
+
     						<div class="input-group">
                               <input class="form-control" type="text" value="" name="infixVal" placeholder="Input your Infix expression here"></input>
                                 <span class="input-group-btn">
-                                    <button class="btn btn-default" type="button" onclick="document.formPostfix.postfixVal.value=InfixToPostfix(document.formStack.infixVal.value,'arr',0);">Convert</button>
+                                    <button class="btn btn-default" type="button" onclick="document.formStack.postfixVal.value=InfixToPostfix(document.formStack.infixVal.value,'arr',0);">Convert</button>
                                 </span>
                             </div>
+
+                            <div class="input-group gap-2">
+                                <span class="input-group-addon">Postfix</span>
+                                <input class="form-control" type="text" value="" name="postfixVal"></input>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12 text-center gap-1">
+                                    <input type="reset" class="btn btn-default" value="Reset"/></input>
+                                </div>    
+                            </div>    
+
                             </div>
 						</form>
     				</div>	
     			</div>
-
-                <div class="row">
-                    <div class="col-md-8 col-md-offset-2">
-                        <form role="form" name="formPostfix" method="post" action="">
-                        <div class="form-group">
-                            <div class="input-group">
-                                <span class="input-group-addon">Postfix</span>
-                                <input class="form-control" type="text" value="" name="postfixVal"></input>
-                            </div>
-                        </div>
-                        </form>
-    		        </div>		
-                </div>
                 
             </div>        
     	</section>	
