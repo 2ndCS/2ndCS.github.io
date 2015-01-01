@@ -1,24 +1,26 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html class="no-js">
-	<head>
-	<meta charset="utf-8">
-        <title>//Stack.</title>
-        <meta name="description" content="This is an experimental stack program using javascript made for educational purpose :D">
-        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<head>
+    <meta charset="utf-8">
+        <title>//stack.</title>
+    <meta name="description" content="This is an experimental stack program using javascript made for educational purpose :D">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
-        <!-- css list -->
-        <link rel="stylesheet" href="css/bootstrap.css">
-        <link rel="stylesheet" href="css/flat-ui.css">
-        <link rel="stylesheet" href="css/style.css">
+    <!-- CSS list -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/main.css" />    
+    <link rel="stylesheet" href="css/flat-ui.css" />
+    <link rel="stylesheet" href="css/material-shadow.css" />
 
-         <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/jquery-2.1.1.min.js"><\/script>')</script>
-        <!-- Modernizr -->
-        <script src="js/modernizr.min.js"></script>
-    </head>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-2.1.1.min.js"><\/script>')</script>
 
-    <body>
-        <!-- Pushy Menu -->
+    <!-- Modernizr -->
+    <script src="js/modernizr.min.js"></script>
+</head>
+
+<body>
+    <!-- Pushy Menu -->
         <nav class="pushy pushy-left">
             <ul>
                 <li><a href="#" target="_blank">Ariiq Dio F</a></li>
@@ -27,64 +29,101 @@
                 <li><a href="#" target="_blank">Rio</a></li>
                 <li><a href="#" target="_blank">Yesi Sulasih</a></li>
                 <li><a href="#" target="_blank">Yonathan APH</a></li>
-
             </ul>
         </nav>
 
         <!-- Site Overlay -->
         <div class="site-overlay"></div>
 
-        <header>
+    <header>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2 col-xs-4">
+                <div class="menu-btn">&equiv; about</div>
+            </div>
+        </div>
+
+        <div class="row section-padding">
+            <div class="col-xs-12 text-center">
+                <div id="postfix">
+                <h1><img src="images/stack_logo.png" alt="stack logo"> <em id="stack">STACK</em></h1>
+                </div>
+            </div>
+        </div>    
+
+        <div class="row">
+            <div class="col-xs-12 gap-1">
+                <!-- blank row -->
+            </div>    
+        </div>    
+
+    </div>
+    </header>
+
+        <section class="primary">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-md-2 col-xs-4">
-                        <div class="menu-btn">&equiv; about</div>
+                    <div class="col-md-9 col-md-offset-1 col-xs-9 col-xs-offset-1 convert shadow-z-1">
+
+                        <div class="row">
+                            <div class="col-md-10 col-md-offset-1 col-xs-12">
+                                <div class="input-group">
+                                <input type="text" id="infixVal" class="form-control" placeholder="Enter infix expression"/>
+                                    <span class="input-group-btn">
+                                        <button id="conv" class="btn btn-default" onclick="main()">Convert</button>
+                                    </span>
+                                </div> 
+                            </div>    
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-10 col-md-offset-1 col-xs-12 gap-1 text-vertical-center">
+                                <div id="table1">
+                                    <p id="tabel">&lt; table &gt;</p>    
+                                </div>
+                            </div>
+                        </div>
+                
+                    </div>
+
+                    <div class="col-md-2 col-xs-1 text-center">
+                        <button class="btn-round shadow-z-1">#</button>
                     </div>
                 </div>
-            </div>   
-        </header>                 
-    	<section class="primary section-padding" id="primary">
-    		<div class="container-fluid">
-    			<div class="row">
-    				<div class="col-md-10 col-md-offset-1 text-center">
-    					<h1><img src="images/stack_logo.png" alt="stack logo"> STACK</h1>
-    				</div>
-    			</div>
-    			
-    			<div class="row">
-    				<div class="col-md-8 col-md-offset-2 text-center gap-1">
-    					<form role="form" name="formStack" method="post" action="">
- 							<div class="form-group">
 
-    						<div class="input-group">
-                              <input class="form-control" type="text" value="" name="infixVal" placeholder="Input your Infix expression here"></input>
-                                <span class="input-group-btn">
-                                    <button class="btn btn-default" type="button" onclick="document.formStack.postfixVal.value=InfixToPostfix(document.formStack.infixVal.value,'arr',0);">Convert</button>
-                                </span>
-                            </div>
+                <div class="row">
+                    <div class="col-xs-12 gap-1">
+                    <!-- blank row -->
+                </div>    
+        </div>   
+            </div>    
 
-                            <div class="input-group gap-2">
-                                <span class="input-group-addon">Postfix</span>
-                                <input class="form-control" type="text" value="" name="postfixVal"></input>
-                            </div>
-    
-                            <div class="row">
-                                <div class="col-md-12 text-center gap-1">
-                                    <input type="reset" class="btn btn-default" value="Reset"/></input>
-                                </div>    
-                            </div>    
+        </section>
+</body>
 
-                            </div>
-						</form>
-    				</div>	
-    			</div>
-                
-            </div>        
-    	</section>	
-    </body>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/pushy.min.js"></script>
+<script src="js/intopos.js"></script>
+<script src="js/jquery.js"></script>
 
-    <!-- JS list -->
-    <script src="js/bootstrap.js"></script>
-    <script src="js/InfixToPostfix.js"></script>
-    <script src="js/pushy.min.js"></script>
+    <!-- Custom JavaScript -->
+    <script>
+    // Scrolls to the selected menu item on the page
+    $(function() {
+        $('a[href*=#]:not([href=#])').click(function() {
+            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
+
+                var target = $(this.hash);
+                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                if (target.length) {
+                    $('html,body').animate({
+                        scrollTop: target.offset().top
+                    }, 1000);
+                    return false;
+                }
+            }
+        });
+    });
+              
+    </script>
 </html>

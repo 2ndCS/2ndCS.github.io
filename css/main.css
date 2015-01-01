@@ -1,22 +1,69 @@
-/* STYLE STACK */
+html,body{
+	max-height:100%;
+	max-width:100%;
+  font-size: 100%;
+  color:#fff;
+  background-color: #ecf0f1;
+  overflow-x:hidden;}
 
-body {
-		background-color: #ecf0f1;
-		overflow-x:hidden;}
+.gap-1 { margin-top : 7vh;}
+.gap-2 { margin-top : 5vh;}
+.gap-3 { margin-top : 3vh;}
 
-.gap-1 { margin-top : 5vh;}
-.gap-2 { margin-top : 3vh;}
-.gap-3 { margin-top : 1vh;}
+.section-padding { margin: 100px 0 100px 0;}
 
-.section-padding { margin: 120px 0 100px 0;}
+.menu-btn {
+    font-size: 3vmin; 
+    padding-top:3vmin; 
+    cursor: pointer;
+    text-transform: uppercase;}
 
-.menu-btn {font-size: 2.5vh; padding-top:2vh; cursor: pointer; text-transform: uppercase;}
-.primary img{max-width:100%;}
+header  {
+    background-image:url(../images/blue.png);
+    no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-attachment: fixed;}
 
-@media (max-width: 320px)
-    {   .section-padding { margin: 10px 0 20px 0;}
-        .menu-btn{font-size: 3.5vh;}
-       }
+.text-vertical-center{
+	display:table-cell;
+	text-align:center;
+	vertical-align:middle;
+}
+#stack{
+    font-size: 9vh;
+    }  
+
+#tabel{
+    font-size: 6vh;
+    }  
+td  {
+    color:#000;
+    font-size:2vmin;
+    vertical-align: bottom;}
+
+.primary
+{background-color: #ecf0f1;}
+.convert{background-color:#fff;
+padding-top:5%; margin-top:-90px;
+border: none;
+border-radius: 3px;
+  }
+
+.btn-round{
+    margin: -30px 0px 0px -30px;
+    background-color: #32eabb;
+    border:none;
+    border-radius: 100%;
+    width: 9vmin;
+    height: 9vmin;
+    font-size: 5vmin;
+    position:absolute;}
+
+
+
 
 /*===========================================================================*/
 /*! Pushy - v0.9.1 - 2013-9-16
@@ -105,20 +152,4 @@ body {
     bottom: 0;
     left: 200px;
     z-index: 9999;
-}
-
-/* Example Media Query */
-
-@media screen and (max-width: 768px){
-    .pushy{
-        font-size: 2vh;
-        padding-top: 30vh;
-    }
-}
-
-@media screen and (max-width: 320px){
-    .pushy{
-        font-size: 2.5vh;
-        padding-top: 20vh;
-    }
 }
