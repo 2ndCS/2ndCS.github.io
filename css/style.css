@@ -12,13 +12,23 @@ html,body{
 
 .section-padding { margin: 100px 0 100px 0;}
 
+.delay-05  {-webkit-animation-delay: 0.5s; -moz-animation-delay: 0.5s; -o-animation-delay: 0.5s; animation-delay: 0.5s;}
+.delay-10  {-webkit-animation-delay:   1s; -moz-animation-delay:   1s; -o-animation-delay:   1s; animation-delay:   1s;}
+.delay-15  {-webkit-animation-delay: 1.5s; -moz-animation-delay: 1.5s; -o-animation-delay: 1.5s; animation-delay: 1.5s;}
+
+.duration-05  {-webkit-animation-duration: 0.5s; -moz-animation-duration: 0.5s; -o-animation-duration: 0.5s; animation-duration: 0.5s;}
+.duration-10  {-webkit-animation-duration:   1s; -moz-animation-duration:   1s; -o-animation-duration:   1s; animation-duration:   1s;}   
+.duration-15  {-webkit-animation-duration: 1.5s; -moz-animation-duration: 1.5s; -o-animation-duration: 1.5s; animation-duration: 1.5s;}   
+
 .menu-btn {
-    font-size: 3vmin; 
-    padding-top:3vmin; 
+    font-size: 4vh; 
+    padding-top: 3vh; 
     cursor: pointer;
     text-transform: uppercase;}
 
 header  {
+    text-transform: uppercase;
+    
     background-image:url(../images/blue.png);
     no-repeat center center;
     -webkit-background-size: cover;
@@ -28,41 +38,51 @@ header  {
     background-attachment: fixed;}
 
 .text-vertical-center{
-	display:table-cell;
-	text-align:center;
-	vertical-align:middle;
-}
-#stack{
-    font-size: 9vh;
-    }  
+    display:table-cell;
+    text-align:center;
+    vertical-align:middle;
+    } 
 
-#tabel{
-    font-size: 6vh;
-    }  
+ 
 td  {
     color:#000;
-    font-size:2vmin;
-    vertical-align: bottom;}
+    border-bottom:#32eabb solid 2px; 
+    font-size:3vmin;
+    vertical-align: bottom;
+    }
 
-.primary
-{background-color: #ecf0f1;}
-.convert{background-color:#fff;
-padding-top:5%; margin-top:-90px;
-border: none;
-border-radius: 3px;
-  }
+.primary , .secondary {background-color: #ecf0f1;}
+
+.paper{
+    background-color:#fff;
+    padding-top:3vh;
+    border: none;
+    border-radius: 3px;
+    padding-bottom: 7vh;
+    }
+
+.paper-red{
+    color:#ecf0f1;
+    background-color:#e91e63;
+    padding-top:3vh;
+    border: none;
+    border-radius: 3px;
+    padding-bottom: 7vh;
+    }
+
+.pos-1 { margin-top:-11vh; }
 
 .btn-round{
-    margin: -30px 0px 0px -30px;
+    margin: -4.5vh 0px 0px -5vh;
+    color:#ecf0f1;
     background-color: #32eabb;
     border:none;
     border-radius: 100%;
     width: 9vmin;
     height: 9vmin;
-    font-size: 5vmin;
-    position:absolute;}
-
-
+    font-size: 4vmin;
+    position:absolute;
+    }
 
 
 /*===========================================================================*/

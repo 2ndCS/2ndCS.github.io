@@ -7,8 +7,8 @@ function isOperator(who)
 	{
 		return((who=="+" || who=="-" || who=="*" || who=="/" || who=="^")? true : false);
 	}
-//cek tingkatan
-function cek(who){
+//lvl_check tingkatan
+function lvl_check(who){
 		if(who=="^")
 			return(5);
 		if((who=="*")||(who=="/"))
@@ -22,32 +22,35 @@ function cek(who){
 	}   
 function main() {
     var str = document.getElementById("infixVal").value;
-    var strArray = str.split("");//konvert ke array
+    var strArray = str.split(""); //convert to array
 //array stack dan hasil
     var stack =[];
     var hasil =[];
     var cetakArr=[];
     var tblArr=[];
-    var popele=[];
-    var popall= [];//pop semua stack akhir ke tabel
+    var pop_ele=[];
+    var pop_all= [];//pop semua stack akhir ke tabel-container
 //cetak ke html
     var cetak=document.getElementById("stack");
-    var cetaktbl = document.getElementById("tabel");
+    var cetaktbl = document.getElementById("tabel-container");
 //-----------------------------------
 if(strArray==""){
-    $("#idAlert1").addClass('animated shake');
-    $("#idAlert1").show();
+    $(".secondary").hide();
+    $(".warning").addClass('animated shake delay-05 duration-05');
+    $("#warn-null").show();
+    $(".warning").show();
+    
 }
 else{
     for(var i=0; i < strArray.length; i++){
        if(isOperand(strArray[i])){
            hasil.push(strArray[i]);
-           popele[i]=strArray[i];//PUSH hasil dengan length infix
+           pop_ele[i]=strArray[i];//PUSH hasil dengan length infix
      }
        
         if(isOperator(strArray[i])){
-            while(cek(strArray[i])<=cek(stack[stack.length-1])){ //membandingkan operator
-                popele[i]+=stack[stack.length-1];
+            while(lvl_check(strArray[i])<=lvl_check(stack[stack.length-1])){ //membandingkan operator
+                pop_ele[i]+=stack[stack.length-1];
                 hasil.push(stack.pop());
             }
                 stack.push(strArray[i]);
@@ -58,54 +61,56 @@ else{
 //pop semua array sampai "("
         if(strArray[i]==")"){
             while(stack[stack.length-1]!="("){
-                popele[i]+=stack[stack.length-1];
+                pop_ele[i]+=stack[stack.length-1];
                 hasil.push(stack.pop());
                 if(stack[stack.length-1]==stack[-1]){
-                    $("#idAlert2").addClass('animated shake');
-                    $("#idAlert2").show();
+                    $(".secondary").hide();
+                    $(".warning").addClass('animated shake delay-05 duration-05');
+                    $(".warn-err").show();
+                    $(".warning").show();
                     break;}//handling loop
             }
-                if(popele[i]==undefined)popele[i]="";//menghilangkan undefined
+                if(pop_ele[i]==undefined)pop_ele[i]="";//menghilangkan undefined
                 stack.pop();
         }
-        //simpan stack untuk tabel
+        //simpan stack untuk tabel-container
         for(var j=stack.length-1;j>=0;j--){
         tblArr+=stack[j]+"<br/>";
         } 
         tblArr+=",";
     }
 //^kodingan stack^
-//menghilangkan undifined untuk stack pada tabel (array --> string --> array)
+//menghilangkan undifined untuk stack pada tabel-container (array --> string --> array)
     var pstack=tblArr.toString();
     var hstack=pstack.split(",");
 // hasil stack dengan length infix (array --> string -->array(delete(,undefined)) --> string --> array)
-    var ppopele=popele.toString();
-    var hpopele=ppopele.split(",undefined");  
-    var ppopele1=hpopele.toString();
-    var hpopele1=ppopele1.split(",");    
+    var ppop_ele=pop_ele.toString();
+    var hpop_ele=ppop_ele.split(",undefined");  
+    var ppop_ele1=hpop_ele.toString();
+    var hpop_ele1=ppop_ele1.split(",");    
 //push semua stack ke hasil
         if(strArray[i]==strArray[strArray.length]){
             for(var y=stack.length-1;y>=0;y--){
-                popall+=stack[y]; //push semua stack ke tabel akhir 
+                pop_all+=stack[y]; //push semua stack ke tabel-container akhir 
                 hasil.push(stack[y]);
                 stack.pop();
             }
         }
-//---------------TABEL-------------    
+//---------------tabel-container-------------    
     var result = '<div class="table-responsive"><table class="table">';
     for(var a=0; a< 3; a++) {
         result += "<tr>";
         for(var b=0; b<hstack.length; b++){
             if(a==0){ //cetak infix 
-                if(b==hstack.length-1)result += "<td>"+";"+"</td>";//jika for tabel=length infix, maka ditambahkan nilai ";" 
+                if(b==hstack.length-1)result += "<td>"+";"+"</td>";//jika for tabel-container=length infix, maka ditambahkan nilai ";" 
                     else
                         result += "<td>"+strArray[b]+"</td>";    
             }
             else if(a==1){ //cetak stack
                 result += "<td style=vertical-align:bottom;>"+hstack[b]+"</td>";}
             else { //cetak hasil
-                if(b==hstack.length-1)result += "<td>"+popall+"</td>"; 
-                    else result += "<td>"+hpopele1[b]+"</td>";}
+                if(b==hstack.length-1)result += "<td>"+pop_all+"</td>"; 
+                    else result += "<td>"+hpop_ele1[b]+"</td>";}
         }
         result += "</tr>";
     }
@@ -115,8 +120,11 @@ else{
     for(var x=0; x < hasil.length;x++){
          cetakArr+=hasil[x]; 
         if(hasil[x]=="("){
-         $("#idAlert2").addClass('animated shake');
-         $("#idAlert2").show(); 
+            $(".secondary").hide();
+            $(".warning").addClass('animated shake delay-05 duration-05');
+            $(".warn-err").show();
+            $(".warning").show();
+            
         }
         }
     cetak.innerHTML=cetakArr;

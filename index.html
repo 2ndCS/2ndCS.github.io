@@ -7,10 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
     <!-- CSS list -->
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <link rel="stylesheet" href="css/main.css" />    
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="css/style.css" />    
     <link rel="stylesheet" href="css/flat-ui.css" />
-    <link rel="stylesheet" href="css/material-shadow.css" />
+    <link rel="stylesheet" href="css/animate.css" />
+    <link rel="stylesheet" href="css/m.shadow.css" />
+    <link rel="stylesheet" href="css/font-awesome.css" />
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="js/jquery-2.1.1.min.js"><\/script>')</script>
@@ -39,14 +41,14 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-2 col-xs-4">
-                <div class="menu-btn">&equiv; about</div>
+                <div class="menu-btn"><i class="fa fa-navicon"></i> </div>
             </div>
         </div>
 
         <div class="row section-padding">
-            <div class="col-xs-12 text-center">
-                <div id="postfix">
-                <h1><img src="images/stack_logo.png" alt="stack logo"> <em id="stack">STACK</em></h1>
+            <div class="col-xs-12 col-md-12 text-center">
+                <div class="logo">
+                <h1><img src="images/stack-logo.png" alt="stack logo"> <em id="stack">TACK</em></h1>
                 </div>
             </div>
         </div>    
@@ -63,67 +65,87 @@
         <section class="primary">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-md-9 col-md-offset-1 col-xs-9 col-xs-offset-1 convert shadow-z-1">
+                    <div class="col-md-9 col-md-offset-1 col-xs-10 col-xs-offset-1 paper pos-1 shadow-z-1">
 
                         <div class="row">
-                            <div class="col-md-10 col-md-offset-1 col-xs-12">
+                            <div class="col-md-10 col-md-offset-1 col-xs-12 gap-2">
                                 <div class="input-group">
-                                <input type="text" id="infixVal" class="form-control" placeholder="Enter infix expression"/>
+                                <input type="text" id="infixVal" class="form-control" placeholder="Enter your infix expression here"/>
                                     <span class="input-group-btn">
-                                        <button id="conv" class="btn btn-default" onclick="main()">Convert</button>
+                                        <button id="btn-default" class="btn btn-default" onclick="main()">Convert</button>
                                     </span>
                                 </div> 
                             </div>    
                         </div>
 
+                    </div>
+
+                    <div class="col-md-2 col-xs-1 text-center">
+                        <button class="btn-round shadow-z-1"><i class="fa fa-close"></i></button>
+                    </div>
+                </div>
+
+                <div class="row blank-row">
+                    <div class="col-xs-12 gap-2">
+                    <!-- blank row -->
+                    </div>    
+                </div>   
+            </div>    
+
+        </section>
+
+        <section class="warning">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-9 col-md-offset-1 col-xs-10 col-xs-offset-1 paper-red pos-2 shadow-z-1">
+
+                                <div class="warn-null text-center gap-2">
+                                    Enter your infix expression first!
+                                </div>    
+
+                                <div class="warn-err text-center gap-2">
+                                    Wrong! please recheck your infix expression.
+                                </div>
+                
+                    </div>
+                </div>
+
+                <div class="row blank-row">
+                    <div class="col-xs-12 gap-1">
+                    <!-- blank row -->
+                    </div>    
+                </div>   
+            </div>    
+        </section>
+
+        <section class="secondary">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-9 col-md-offset-1 col-xs-10 col-xs-offset-1 paper pos-2 shadow-z-1">
+
                         <div class="row">
                             <div class="col-md-10 col-md-offset-1 col-xs-12 gap-1 text-vertical-center">
-                                <div id="table1">
-                                    <p id="tabel">&lt; table &gt;</p>    
+                                <div id="tabel">
+                                    <p id="tabel-container">&#91; TABLE GOES HERE &#93;</p>    
                                 </div>
                             </div>
                         </div>
                 
                     </div>
-
-                    <div class="col-md-2 col-xs-1 text-center">
-                        <button class="btn-round shadow-z-1">#</button>
-                    </div>
                 </div>
 
-                <div class="row">
+                <div class="row blank-row">
                     <div class="col-xs-12 gap-1">
                     <!-- blank row -->
-                </div>    
-        </div>   
+                    </div>    
+                </div>   
             </div>    
-
         </section>
+
 </body>
 
 <script src="js/bootstrap.min.js"></script>
 <script src="js/pushy.min.js"></script>
 <script src="js/intopos.js"></script>
-<script src="js/jquery.js"></script>
-
-    <!-- Custom JavaScript -->
-    <script>
-    // Scrolls to the selected menu item on the page
-    $(function() {
-        $('a[href*=#]:not([href=#])').click(function() {
-            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
-
-                var target = $(this.hash);
-                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-                if (target.length) {
-                    $('html,body').animate({
-                        scrollTop: target.offset().top
-                    }, 1000);
-                    return false;
-                }
-            }
-        });
-    });
-              
-    </script>
+<script src="js/additional.js"></script>
 </html>
