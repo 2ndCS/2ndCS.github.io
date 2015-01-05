@@ -7,6 +7,7 @@ function isOperator(who)
 	{
 		return((who=="+" || who=="-" || who=="*" || who=="/" || who=="^")? true : false);
 	}
+
 //lvl_check tingkatan
 function lvl_check(who){
 		if(who=="^")
@@ -20,19 +21,23 @@ function lvl_check(who){
 		if(who==")")
 			return(1);
 	}   
+//program utama    
 function main() {
     var str = document.getElementById("infixVal").value;
-    var strArray = str.split(""); //convert to array
-//array stack dan hasil
+    var strArray = str.split(""); //convert string to array
+
+//deklarasi variabel array stack dan hasil
     var stack =[];
     var hasil =[];
     var cetakArr=[];
     var tblArr=[];
     var pop_ele=[];
     var pop_all= [];//pop semua stack akhir ke tabel-container
+
 //cetak ke html
     var cetak=document.getElementById("stack");
     var cetaktbl = document.getElementById("tabel-container");
+    
 //-----------------------------------
 if(strArray==""){
     $(".secondary").hide();
@@ -79,15 +84,17 @@ else{
         } 
         tblArr+=",";
     }
-//^kodingan stack^
+
 //menghilangkan undifined untuk stack pada tabel-container (array --> string --> array)
     var pstack=tblArr.toString();
     var hstack=pstack.split(",");
+
 // hasil stack dengan length infix (array --> string -->array(delete(,undefined)) --> string --> array)
     var ppop_ele=pop_ele.toString();
     var hpop_ele=ppop_ele.split(",undefined");  
     var ppop_ele1=hpop_ele.toString();
     var hpop_ele1=ppop_ele1.split(",");    
+
 //push semua stack ke hasil
         if(strArray[i]==strArray[strArray.length]){
             for(var y=stack.length-1;y>=0;y--){
@@ -102,7 +109,7 @@ else{
         result += "<tr>";
         for(var b=0; b<hstack.length; b++){
             if(a==0){ //cetak infix 
-                if(b==hstack.length-1)result += "<td>"+";"+"</td>";//jika for tabel-container=length infix, maka ditambahkan nilai ";" 
+                if(b==hstack.length-1)result += "<td>"+";"+"</td>";//jika for tabel-container = length infix, maka ditambahkan nilai ";" 
                     else
                         result += "<td>"+strArray[b]+"</td>";    
             }
@@ -116,6 +123,7 @@ else{
     }
     result += "</table>";
 //-------------------------------   
+    
     //cetak hasil
     for(var x=0; x < hasil.length;x++){
          cetakArr+=hasil[x]; 
@@ -129,5 +137,5 @@ else{
         }
     cetak.innerHTML=cetakArr;
     cetaktbl.innerHTML=result;
-}// else strarray =""
+}
 }
